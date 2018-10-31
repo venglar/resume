@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css?family=Bai+Jamjuree:200,300,500,600');
+@import url('https://use.fontawesome.com/releases/v5.3.1/css/all.css');
+@import "~bootstrap/scss/bootstrap";
+
+$sidebar-orange: #cd8353;
+$content-orange: #c5541e;
+$gray: #808080;
+$border: #BBB;
+
+html {
+    box-sizing: border-box;
+    height: 100%;
+    background: $gray;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+body, .wrap {
+    height: 100%;
+    font-weight: 300;
+}
+.row-no-padding {
+    > [class*="col-"] {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+}
+.wrap {
+    max-width: 1130px;
+    margin: auto;
+    background: white;
+    box-shadow: 0 0 20px 10px rgba(0,0,0,0.3);
+    display: block;
+    min-height: min-content; /* background won't scroll without this */
+}
+.sidebar {
+    background: #333333;
+    color: #c5c5c5;
+    font-family: 'Bai Jamjuree', sans-serif;
+    font-size: 14px;
+    .sidebar-inner {
+        padding: 15px 15px 0 15px;
+        .intro {
+            padding-bottom: 15px;
+            border-bottom: 1px solid $border;
+            margin-bottom: 15px;
+            > div {
+                margin: auto;
+                > div {
+                    display: table-cell;
+                    width: inherit;
+                    vertical-align: middle;
+                }
+                display: table;
+                h1 {
+                    font-size: 24px;
+                    font-weight: 300;
+                    color: $sidebar-orange;
+                }
+                h2 {
+                    color: #DDD;
+                    vertical-align: middle;
+                    line-height: 13px;
+                    margin: 10px 0;
+                    font-size: 13px;
+                    white-space: nowrap;
+                    font-weight: 300;
+
+                    i {
+                        font-size: 16px;
+                        margin-right: 10px;
+                    }
+                    span {
+                        vertical-align: text-top;
+                        display: inline-block;
+                    }
+                }
+                .image-col {
+                    max-width: 148px;
+                    img.face {
+                        padding: 0 20px;
+                        width: 100%;
+                        border-radius: 100%;
+                    }
+                }
+            }
+        }
+        .skills {
+            border-bottom: 1px solid $border;
+            margin-bottom: 15px;
+            h2.title {
+                margin-bottom: 20px;
+            }
+            div.skill {
+                margin-bottom: 20px;
+            }
+            .icon {
+                width: 100%;
+                max-width: 24px;
+                height: 24px;
+                margin: auto;
+                img {
+                    width: 100%;
+                    max-width: 24px;
+                }
+            }
+            .label {
+                position: absolute;
+                left: 0;
+                right: 0;
+                margin-top: 5px;
+            }
+            [class*="col-"] {
+                margin: 0 0 10px 0;
+            }
+        }
+        .references {
+            .contact {
+                padding-bottom: 10px;
+            }
+            h2, h3 {
+                font-weight: 300;
+                margin-bottom: 0;
+                font-size: 14px;
+            }
+            h2 {
+                color: $sidebar-orange;
+                font-size: 16px;
+            }
+        }
+    }
+    #toggle-references {
+        margin: 10px 0;
+        color: $sidebar-orange;
+        font-weight: 500;
+    }
+}
+.content {
+    font-family: 'Bai Jamjuree', sans-serif;
+    padding: 25px;
+    font-size: 14px;
+    strong {
+        font-weight: 500;
+        color: $content-orange;
+    }
+    h1 {
+        border-bottom: 1px solid #CCC;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+        font-size: 24px;
+    }
+    .info-block {
+        margin-bottom: 30px;
+    }
+    .experience {
+        margin: 0;
+        padding: 0;
+        ul li {
+            margin: 5px;
+        }
+        h2, h3, h4 {
+            line-height: 18px;
+        }
+        h2 {
+            font-size: 18px;
+            font-weight: 600;
+        }
+        h3, h4 {
+            font-size: 16px;
+        }
+        > ul {
+            font-size: 14px;
+            padding-left: 14px;
+            ul {
+                padding-left: 28px;
+            }
+        }
+    }
+}
+
+
+/**
+
+Desktop
+
+**/
+@include media-breakpoint-up(md) {
+    .wrap {
+        display: flex;
+    }
+    .sidebar {
+        max-width: 220px;
+        .sidebar-inner {
+            padding: 0;
+            margin: 25px 0;
+            .intro {
+                h1 {
+                    font-size: 24px;
+                    font-weight: 300;
+                    color: $sidebar-orange;
+                }
+                h2 {
+                    color: #DDD;
+                    vertical-align: middle;
+                    line-height: 13px;
+                    margin: 20px 0;
+                    font-size: 13px;
+                    white-space: nowrap;
+                    i {
+                        font-size: 16px;
+                        margin-right: 10px;
+                    }
+                    span {
+                        vertical-align: text-top;
+                        display: inline-block;
+                    }
+                }
+                > div {
+                    margin: auto;
+                    > div {
+                        display: block;
+                        width: inherit;
+                        vertical-align: middle;
+                    }
+                    display: block;
+                    .image-col {
+                        max-width: 100%;
+                        min-width: 0;
+                        img.face {
+                            padding: 0 10px;
+                            width: 70%;
+                            border-radius: 100%;
+                        }
+                    }
+                }
+            }
+            .skills {
+                div.skill {
+                    margin-bottom: 40px;
+                }
+                padding-bottom: 10px;
+                h2 {
+                    color: $sidebar-orange;
+                    font-size: 16px;
+                    font-weight: 300;
+                }
+                .label {
+                    margin-top: 5px;
+                }
+            }
+            .blurbs {
+                > div {
+                    position: relative;
+                    white-space: nowrap;
+                    &:not(:last-child) {
+                        margin-bottom: 15px;
+                    }
+                }
+                .emphasis {
+                    position: relative;
+                    font-size: 18px;
+                    color: $sidebar-orange;
+                    margin: -8px 0;
+                    z-index: 300;
+                }
+            }
+        }
+    }
+}

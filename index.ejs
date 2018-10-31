@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title><%= title %></title>
+</head>
+<body style="background: #808080; opacity: 0; transition: opacity .25s ease-in-out;">
+    <div class="row wrap">
+        <div class="col-12 col-md-4 sidebar">
+            <div class="sidebar-inner row row-no-padding">
+                <div class="col col-md-12 intro text-md-center">
+                    <div class="row row-no-padding">
+                        <div class="col col-md-12 text-center image-col"><img src="assets/images/droo.jpg" class="face" /></div>
+                        <div class="col col-md-12">
+                            <h1 class="pt-md-3"><%= name %></h1>
+                            <h2><i class="fas fa-mobile-alt"></i><span><%= phone %></span></h2>
+                            <h2><i class="far fa-envelope"></i><span><%= email %></span></h2>
+                            <h2><i class="fab fa-github"></i><span><%= github %></span></h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 skills text-center">
+                    <div class="row row-no-padding">
+                    <% _.forEach(sidebar.skills, function(skill) { %>
+                        <h2 class="col-12 d-none d-md-block title"><%= skill.title %></h2>
+                        <% _.forEach(skill.children, function(child) { %>
+                            <div class="col-2 col-md-4 skill">
+                                <div class="icon"><img src="assets/images/<%= child.image %>"></div>
+                                <div class="label d-none d-md-block"><%= child.name %></div>
+                            </div>
+                        <% }); %>
+                    <% }); %>
+                    </div>
+                </div>
+                <div class="col-12 justify-content-center references d-none d-md-block" id="references">
+                    <% _.forEach(sidebar.contacts, function(contact) { %>
+                        <div class="col-12 contact">
+                            <h2><%= contact.name %></h2>
+                            <h3><%= contact.title %></h3>
+                            <div class="phone"><%= contact.phone %></div>
+                        </div>
+                    <% }); %>
+                </div>
+                <a href="javascript:;" id="toggle-references" class="col-12 d-md-none text-center expanded">Show References</a>
+            </div>
+        </div>
+        <div class="col content">
+            <div id="content" class="experience"></div>
+        </div>
+    </div>
+</body>
+</html>
