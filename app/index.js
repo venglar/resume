@@ -8,7 +8,7 @@ newXHR.addEventListener('load', function(){
     document.getElementById('content').innerHTML = marked(this.response);
     document.body.style.opacity = 1;
 });
-newXHR.open('GET', '/assets/content.md');
+newXHR.open('GET', 'assets/content.md');
 newXHR.send();
 
 
